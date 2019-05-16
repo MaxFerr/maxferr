@@ -1,0 +1,44 @@
+@-webkit-keyframes fadeInS { 
+  0% { opacity:0; } 
+  50% { opacity:1; }
+  100% { opacity:0; }
+}
+@-moz-keyframes fadeInS {  
+  0% { opacity:0; } 
+  50% { opacity:1; }
+  100% { opacity:0; } 
+}
+@keyframes fadeInS {  
+  0% { opacity:0; } 
+  50% { opacity:1; }
+  100% { opacity:0; } 
+}
+
+.fade-in_scroll {
+  opacity:0; 
+  -webkit-animation:fadeInS ease-in 2s infinite;  
+  -moz-animation:fadeInS ease-in 2s infinite;
+  animation:fadeInS ease-in 2s infinite;
+
+  -webkit-animation-fill-mode:forwards;  
+  -moz-animation-fill-mode:forwards;
+  animation-fill-mode:forwards;
+
+  -webkit-animation-duration:6s;
+  -moz-animation-duration:6s;
+  animation-duration:6s;
+}
+
+
+.breathe{
+  textAlign:center;
+   backgroundColor:transparent;
+   margin:auto;
+   color:white;
+   font-size: 1.1em;
+}
+
+.chevStyle{
+  margin-left: 38px;
+}
+

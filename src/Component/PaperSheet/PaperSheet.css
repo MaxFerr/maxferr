@@ -1,0 +1,130 @@
+@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+
+.fade-in {
+  opacity:0; 
+  -webkit-animation:fadeIn ease-in 1;  
+  -moz-animation:fadeIn ease-in 1;
+  animation:fadeIn ease-in 1;
+
+  -webkit-animation-fill-mode:forwards;  
+  -moz-animation-fill-mode:forwards;
+  animation-fill-mode:forwards;
+
+  -webkit-animation-duration:1s;
+  -moz-animation-duration:1s;
+  animation-duration:1s;
+}
+
+.fade-in.one {
+  -webkit-animation-delay: 0.2s;
+  -moz-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+}
+
+.fade-in.two {
+  -webkit-animation-delay: 0.4s;
+  -moz-animation-delay:0.4s;
+  animation-delay: 0.4s;
+}
+
+.fade-in.three {
+  -webkit-animation-delay: 0.8s;
+  -moz-animation-delay:0.8s;
+  animation-delay: 0.8s;
+}
+.fade-in.four {
+  -webkit-animation-delay: 1.2s;
+  -moz-animation-delay:1.2s;
+  animation-delay: 1.2s;
+}
+.fade-in.five {
+  -webkit-animation-delay: 1.6s;
+  -moz-animation-delay:1.6s;
+  animation-delay: 1.6s;
+}
+.fade-in.six {
+  -webkit-animation-delay: 2.4s;
+  -moz-animation-delay:2.4s;
+  animation-delay: 2.4s;
+}
+
+.imageStyle{
+	border-radius:50%;
+	width:100%;
+	max-width:160px;
+	height:150px;
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+	transform: translate3d(0, -60%, 0);
+	margin-bottom: -50px;
+	box-shadow: 0 5px 15px -8px rgba(0, 0, 0, 0.24), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+}
+
+.typoStyle{
+	text-align: center;	
+}
+
+.nameStyle{
+	color: #3C4858;
+    margin: 1.75rem 0 0.875rem;
+    display: inline-block;
+    position: relative;
+    margin-top: -80px;    
+    font-weight: 700;    
+    text-decoration: none;
+}
+
+.titleDev {
+    font-size: .75rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-top: -50px;
+    color: #3C4858;
+}
+
+.gitStyle{
+  margin-bottom: 20px;
+}
+
+p {
+    font-size: 14px;
+    margin: 0 0 10px;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    color: #999;
+    text-align: center !important;
+}
+
+.pStyle{
+	 color: #999;
+    margin: 1.071rem auto 0;
+    max-width: 600px;
+    text-align: center !important;
+    margin-bottom: 50px;
+}
+
+.center{
+      display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;     
+}
+
+#paperStyle{
+  margin-left: 4%;
+  margin-right: 4%;
+}
+
+@media all and (max-width: 600px){
+  #paperStyle{
+  margin-left: 1%;
+  margin-right: 1%;
+  }
+}

@@ -1,0 +1,115 @@
+.App {
+  text-align: left;
+}
+
+.particles{
+  position: absolute;
+  top:0%;
+  right:0;
+  bottom:60%;
+  left:0;
+  z-index: 1;
+}
+
+body {
+    background-color: #e5e5e5;
+    color: #3c4858;
+    margin: 0;
+    font-size: 1rem;
+    text-align: left;
+}
+
+.Fixed{
+    position: fixed;
+    top: 50%;
+    right:0%;    
+    z-index: 1;      
+    padding: 30px;
+    opacity: 0.2;
+}
+
+.FixedSecond{
+    position: fixed;
+    top: 50%;    
+    z-index: 1;        
+    padding: 30px;
+    opacity: 0.2;      
+}
+@media all and (max-width: 600px){
+  .Fixed{
+    position: fixed;
+    top: 50%;
+    right:0%;    
+    z-index: 1;      
+    padding: 30px;
+    opacity: 0.2;  
+    margin-right: -35px;      
+}
+
+.FixedSecond{
+    position: fixed;
+    top: 50%;    
+    z-index: 1;        
+    padding: 30px;
+    opacity: 0.2;
+    margin-left: -35px;    
+}
+}
+
+.page{
+	position:absolute;
+	top:100px;
+	left: 0;
+	right: 0;  
+}
+
+.hide{
+  opacity: 0.2;      
+}
+
+.hide:hover{
+  opacity: 1;
+  transition: opacity 300ms linear 150ms;  
+}
+
+#arrowStyle{
+  font-size:35px;
+  fill:grey;
+}
+
+/*.fade-appear,
+.fade-enter{
+	opacity: 0;
+	z-index: 1;
+}
+
+.fade-appear-active,
+.fade-enter.fade-enter-active{
+	opacity: 1;
+	transition: opacity 300ms linear 150ms;
+}
+.fade-exit{
+	opacity: 1;
+}
+.fade-exit.fade-exit-active{
+	opacity: 0;
+	transition: opacity 150ms linear;
+}*/
+
+.background-enter {
+  transform: translate(100%);
+}
+.background-enter.background-enter-active {
+  transform: translate(0%);
+  transition: transform 500ms ease-in-out;  
+}
+.background-exit {
+  transform: translate(0%);
+  opacity: 0;
+}
+.background-exit.background-exit-active {
+  transform: translate(-100%);
+  transition: transform 450ms ease-in-out;
+  opacity: 0;
+}
+

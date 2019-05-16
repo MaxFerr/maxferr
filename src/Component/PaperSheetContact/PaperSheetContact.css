@@ -1,0 +1,58 @@
+.iptStyle{
+	display: block;
+    width: 100%;
+    box-sizing: border-box;
+    outline: none;
+    border: 0;
+    padding: 10px 15px;
+    background: #1E242C;
+    font-size: 12pt;
+    margin-bottom: 3px;
+    color: #fff;
+}
+
+textarea{
+	display: block;
+    width: 100%;
+    box-sizing: border-box;
+    outline: none;
+    border: 0;
+    padding: 10px 15px;
+    background: #1E242C;
+    font-size: 12pt;
+    margin-bottom: 3px;
+    color: #fff;
+}
+
+form{
+	margin-left: 5%;
+	margin-right: 5%;
+}
+
+.iptStyle2{     
+    box-sizing: border-box;
+    outline: none;
+    border: 0;
+    padding: 10px 15px;
+    background: #1E242C;
+    font-size: 12pt;
+    color: #fff;
+    margin-right: 2px;
+    cursor: pointer;
+}
+
+.iptStyle2:hover{
+    background-color: grey;  
+}
+
+#paperStyle{
+  margin-left: 4%;
+  margin-right: 4%;
+}
+
+@media all and (max-width: 600px){
+  #paperStyle{
+  margin-left: 1%;
+  margin-right: 1%;
+  }
+}
