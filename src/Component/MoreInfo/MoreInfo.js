@@ -7,7 +7,9 @@ import './MoreInfo.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import NewComment from '../NewComment/NewComment.js';
-import github from '../PaperSheet/Github.png'; 
+import github from '../PaperSheet/Github.png';
+import '../AdvancedGridList/AdvancedGridList.css';
+ 
 AOS.init();
 
 const styles = theme => ({
@@ -136,7 +138,17 @@ class MoreInfo extends React.Component{
 		}
 		if(lang==="EN"){
 				if(updatedSite.length===0){
-					return <h1>Loading...</h1>
+					return(
+						<div>
+						<Paper className={classes.root} elevation={1}>            
+				            <Typography className='typoStyle' variant="h5" component="h3">
+					              <div>
+					              	<p>Loading<span className='loadingDot'>.</span><span className='loadingDot'>.</span><span className='loadingDot'>.</span></p>
+					              </div>
+				              </Typography>
+			             </Paper>
+		              	</div>
+						) 					
 				} else{
 					return (
 		            <div>           

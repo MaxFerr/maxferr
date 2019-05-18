@@ -77,6 +77,7 @@ class PaperSheet extends React.Component{
                     J'espère avoir l'opportunité de travailler avec vous et votre compagnie !
                     </p>
                   </div>
+                  <p className='pStyle fade-in five'><a href='https://patatap-1.herokuapp.com/' >Bonus</a></p>
               </div>        
             </Typography>
             <div style={{marginBottom:'100px'}} data-aos="fade-in"  data-aos-offset="350"  data-aos-duration='1000' >        

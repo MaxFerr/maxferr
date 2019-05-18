@@ -7,7 +7,7 @@ import GridListTileBar from '@material-ui/core/GridListTileBar';
 import IconButton from '@material-ui/core/IconButton';
 import AddCircleOutline from '@material-ui/icons/AddCircleOutline';
 import {Link} from "react-router-dom";
-
+import './AdvancedGridList.css';
 
 const styles = theme => ({
   root: {
@@ -98,58 +98,66 @@ const resizeImg=window.innerWidth;
 render(){
   const { classes } = this.props;
   const {big,tileData}=this.state;
+  
+  if(this.state.tileData.length<1){
+    return (<div>
+      <p>Loading<span className='loadingDot'>.</span><span className='loadingDot'>.</span><span className='loadingDot'>.</span></p>
+      </div>)
+  }else{
   if(big){
-  return (
-      <div className={classes.root}>    
-        <GridList cellHeight={200} spacing={1} className={classes.gridList}>
-          {tileData.map(tile => { 
-            return(
-                      <GridListTile key={tile.img} cols={JSON.parse(tile.featured) ? 2 : 1} rows={JSON.parse(tile.featured) ? 2 : 1}>
-                        <img src={tile.img} alt={tile.title}/>
-                       <Link  style={{color:'white'}} to={`/moreinfo/${tile.m_sites_id}`}>
-                        <GridListTileBar                          
-                          title={tile.title}
-                          titlePosition="top"
-                          actionIcon={
-                            
-                            <IconButton onClick={()=>this.onMoreInfo(tile.m_sites_id)} className={classes.icon}>
-                              <AddCircleOutline />
-                            </IconButton>
-                            
-                          }
-                          actionPosition="left"
-                          className={classes.titleBar && classes.titleBarH }                          
-                        /></Link>
-                      </GridListTile>
-                    )})}
-        </GridList>                 
-      </div>
-    )
-}else{
-  return (
-      <div className={classes.root}>
-        <GridList cellHeight={100} spacing={1} className={classes.gridList}>
-          {tileData.map(tile => (
-            <GridListTile key={tile.img} cols={JSON.parse(tile.featured)? 2 : 1} rows={JSON.parse(tile.featured) ? 2 : 1}>
-              <img src={tile.img} alt={tile.title}/>
-              <Link style={{color:'white'}} to={`/moreinfo/${tile.m_sites_id}`}>
-              <GridListTileBar
-                title={tile.title}
-                titlePosition="top"
-                actionIcon={                  
-                  <IconButton onClick={()=>this.onMoreInfo(tile.m_sites_id)} className={classes.icon}>
-                    <AddCircleOutline />
-                  </IconButton>                  
-                }
-                actionPosition="left"
-                className={classes.titleBar && classes.titleBarH }  
-              /></Link>
-            </GridListTile>
-          ))}
-        </GridList>              
-      </div>
-      );
-    }
+    return (
+        <div className={classes.root}>    
+          <GridList cellHeight={200} spacing={1} className={classes.gridList}>
+            {tileData.map(tile => { 
+              return(
+                        <GridListTile key={tile.img} cols={JSON.parse(tile.featured) ? 2 : 1} rows={JSON.parse(tile.featured) ? 2 : 1}>
+                          <img src={tile.img} alt={tile.title}/>
+                         <Link  style={{color:'white'}} to={`/moreinfo/${tile.m_sites_id}`}>
+                          <GridListTileBar                          
+                            title={tile.title}
+                            titlePosition="top"
+                            actionIcon={
+                              
+                              <IconButton onClick={()=>this.onMoreInfo(tile.m_sites_id)} className={classes.icon}>
+                                <AddCircleOutline />
+                              </IconButton>
+                              
+                            }
+                            actionPosition="left"
+                            className={classes.titleBar && classes.titleBarH }                          
+                          /></Link>
+                        </GridListTile>
+                      )})}
+          </GridList>                 
+        </div>
+      )
+  }else{
+    return (
+        <div className={classes.root}>
+          <GridList cellHeight={100} spacing={1} className={classes.gridList}>
+            {tileData.map(tile => (
+              <GridListTile key={tile.img} cols={JSON.parse(tile.featured)? 2 : 1} rows={JSON.parse(tile.featured) ? 2 : 1}>
+                <img src={tile.img} alt={tile.title}/>
+                <Link style={{color:'white'}} to={`/moreinfo/${tile.m_sites_id}`}>
+                <GridListTileBar
+                  title={tile.title}
+                  titlePosition="top"
+                  actionIcon={                  
+                    <IconButton onClick={()=>this.onMoreInfo(tile.m_sites_id)} className={classes.icon}>
+                      <AddCircleOutline />
+                    </IconButton>                  
+                  }
+                  actionPosition="left"
+                  className={classes.titleBar && classes.titleBarH }  
+                /></Link>
+              </GridListTile>
+            ))}
+          </GridList>              
+        </div>
+        );
+      }
+  }
+  
   }    
 }
 AdvancedGridList.propTypes = {

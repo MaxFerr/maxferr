@@ -7,6 +7,7 @@ import GridListTileBar from '@material-ui/core/GridListTileBar';
 import IconButton from '@material-ui/core/IconButton';
 import AddCircleOutline from '@material-ui/icons/AddCircleOutline';
 import {Link} from "react-router-dom";
+import '../AdvancedGridList/AdvancedGridList.css';
 
 const styles = theme => ({
   root: {
@@ -84,7 +85,12 @@ const resizeImg=window.innerWidth;
   
 render(){
   const { classes } = this.props; 
-  const {big,tileData}=this.state; 
+  const {big,tileData}=this.state;
+  if(this.state.tileData.length<1){
+    return (<div>
+      <p>Loading<span className='loadingDot'>.</span><span className='loadingDot'>.</span><span className='loadingDot'>.</span></p>
+      </div>)
+  }else{
   if(big){
   return (
       <div className={classes.root}>    
@@ -134,6 +140,8 @@ render(){
       </div>
       );
     }
+  } 
+  
   }   
 }
 AdvancedGridListFav.propTypes = {
