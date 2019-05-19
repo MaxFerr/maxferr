@@ -179,11 +179,11 @@ class MoreInfo extends React.Component{
 								data-aos="fade-left" data-aos-delay="350" data-aos-offset="100" data-aos-duration="800"
 								>Add a new comment</button>						
 								<div id='myDIV' style={{height:'200px',display:'none'}} >
-								<br/>
+								<br/>								
 									<input
 									id='nameComment' 
 									type='text' 
-									placeholder='Name'
+									placeholder=' Name'
 									className='inputNameComment'									
 									onChange={this.onUsernameChange}		
 									/>						
@@ -194,7 +194,7 @@ class MoreInfo extends React.Component{
 									placeholder='Your comment'
 									onChange={this.onCommentChange}							
 									>
-									</textarea>
+									</textarea>									
 									<input
 									className='commentBtn' 															
 									type='submit'
@@ -248,7 +248,7 @@ class MoreInfo extends React.Component{
 									<input
 									id='nameComment' 
 									type='text' 
-									placeholder='Nom' 
+									placeholder=' Nom' 
 									className='inputNameComment'		
 									onChange={this.onUsernameChange}		
 									/>						

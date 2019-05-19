@@ -15,12 +15,14 @@
 	background-color: grey;  
 }
 
+
 .inputNameComment{
 	font-size:11pt;
 	margin-top:10px;
 	margin-bottom:2px;
-	padding:7px;
-	width:97.2%;
+	padding-top: 5px;
+	padding-bottom: 5px;	
+	width:100%;
 	float:left;
 	display:inline-block;
 	background: #1E242C;
