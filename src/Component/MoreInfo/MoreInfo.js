@@ -158,23 +158,23 @@ class MoreInfo extends React.Component{
 		              <h3 data-aos="fade-right" data-aos-delay="350" data-aos-offset="100" data-aos-duration="800">{updatedSite[0].title} </h3>
 		              <img data-aos="fade-left" data-aos-delay="350" data-aos-offset="100" data-aos-duration="800" alt='website' src={updatedSite[0].img} className='imgMoreIStyle' />
 		              <p data-aos="fade-right" data-aos-delay="350" data-aos-offset="100" data-aos-duration="800">{updatedSite[0].descritpion} </p>
-		              <a id='aStyle' style={{display:'block',marginBottom:'10px',marginTop:'40px'}} href={updatedSite[0].link} data-aos="fade-left" data-aos-delay="350" data-aos-offset="100" data-aos-duration="800"><p style={{color:'blue'}}>Try the demo here !</p></a>
+		              <a id='aStyle' className='animated' style={{display:'block',marginBottom:'10px',marginTop:'40px'}} href={updatedSite[0].link} data-aos="fade-left" data-aos-delay="350" data-aos-offset="100" data-aos-duration="800"><p style={{color:'blue'}}>Try the demo here !</p></a>
 		              
 		              {updatedSite[0].link_server!==null ?
 		              	<div style={{display:'inline-block'}}>		              	
-		              	<a id='aStyle' href={updatedSite[0].link_git} style={{display:'inline-block',marginRight:'10px'}} data-aos="fade-left" data-aos-delay="350" data-aos-offset="100" data-aos-duration="800"><img style={{marginBottom:'-25px'}} src={`${github}`} alt="githubIcon"/> <p  style={{color:'blue'}} data-aos="fade-left" data-aos-delay="350" data-aos-offset="100" data-aos-duration="800">Front-end code</p></a>
-		              	<a id='aStyle' style={{display:'inline-block'}} data-aos="fade-left" href={updatedSite[0].link_server} data-aos-delay="350" data-aos-offset="100" data-aos-duration="800"><img style={{marginBottom:'-25px'}} src={`${github}`} alt="githubIcon"/> <p  style={{color:'blue'}} data-aos="fade-left" data-aos-delay="350" data-aos-offset="100" data-aos-duration="800">Back-end code</p></a>
+		              	<a id='aStyle' className='animated' href={updatedSite[0].link_git} style={{display:'inline-block',marginRight:'10px'}} data-aos="fade-left" data-aos-delay="350" data-aos-offset="100" data-aos-duration="800"><img style={{marginBottom:'-25px'}} src={`${github}`} alt="githubIcon"/> <p  style={{color:'blue'}} className='animated' data-aos="fade-left" data-aos-delay="350" data-aos-offset="100" data-aos-duration="800">Front-end code</p></a>
+		              	<a id='aStyle' className='animated' style={{display:'inline-block'}} data-aos="fade-left" href={updatedSite[0].link_server} data-aos-delay="350" data-aos-offset="100" data-aos-duration="800"><img style={{marginBottom:'-25px'}} src={`${github}`} alt="githubIcon"/> <p  style={{color:'blue'}} className='animated' data-aos="fade-left" data-aos-delay="350" data-aos-offset="100" data-aos-duration="800">Back-end code</p></a>
 		                </div>
 		              :
-		              	<a id='aStyle' href={updatedSite[0].link_git} style={{display:'inline-block',marginRight:'10px'}} data-aos="fade-left" data-aos-delay="350" data-aos-offset="100" data-aos-duration="800"><img style={{marginBottom:'-25px'}} src={`${github}`} alt="githubIcon"/> <p  style={{color:'blue'}} data-aos="fade-left" data-aos-delay="350" data-aos-offset="100" data-aos-duration="800">Front-end code</p></a>
+		              	<a id='aStyle' className='animated' href={updatedSite[0].link_git} style={{display:'inline-block',marginRight:'10px'}} data-aos="fade-left" data-aos-delay="350" data-aos-offset="100" data-aos-duration="800"><img style={{marginBottom:'-25px'}} src={`${github}`} alt="githubIcon"/> <p  style={{color:'blue'}} className='animated' data-aos="fade-left" data-aos-delay="350" data-aos-offset="100" data-aos-duration="800">Front-end code</p></a>
 		              }
 		                               
 		              </div>        
 		            </Typography>
-		            <hr data-aos="fade-right" data-aos-delay="350" data-aos-offset="100" data-aos-duration="800" style={{marginTop:'22px'}}/>
+		            <hr data-aos="fade-right" className='animated' data-aos-delay="350" data-aos-offset="100" data-aos-duration="800" style={{marginTop:'22px'}}/>
 		            <div className='divCommentStyle'>					
-								<h3 data-aos="fade-right" data-aos-delay="350" data-aos-offset="100" data-aos-duration="800" className='h3Style'>Comments</h3>
-								<button className='commentBtn'  style={{float:'right',display:'inline-block',marginTop:'22px'}} 
+								<h3 data-aos="fade-right" data-aos-delay="350" data-aos-offset="100" data-aos-duration="800" className='h3Style animated'>Comments</h3>
+								<button className='commentBtn animated'  style={{float:'right',display:'inline-block',marginTop:'22px'}} 
 								onClick={displayDIV}
 								data-aos="fade-left" data-aos-delay="350" data-aos-offset="100" data-aos-duration="800"
 								>Add a new comment</button>						
@@ -224,23 +224,23 @@ class MoreInfo extends React.Component{
 		              <h3 data-aos="fade-right" data-aos-delay="350" data-aos-offset="100" data-aos-duration="800">{updatedSite[0].title} </h3>
 		              <img data-aos="fade-left" data-aos-delay="350" data-aos-offset="100" data-aos-duration="800" alt='website' src={updatedSite[0].img} className='imgMoreIStyle' />
 		              <p data-aos="fade-right" data-aos-delay="350" data-aos-offset="100" data-aos-duration="800">{updatedSite[0].description_fr} </p>
-		              <a id='aStyle'style={{display:'block',marginBottom:'10px',marginTop:'40px'}} href={updatedSite[0].link} data-aos="fade-left" data-aos-delay="350" data-aos-offset="100" data-aos-duration="800"><p style={{color:'blue'}}>Essayer la démo ici !</p></a>
+		              <a id='aStyle' className='animated' style={{display:'block',marginBottom:'10px',marginTop:'40px'}} href={updatedSite[0].link} data-aos="fade-left" data-aos-delay="350" data-aos-offset="100" data-aos-duration="800"><p style={{color:'blue'}}>Essayer la démo ici !</p></a>
 		              
 		              {updatedSite[0].link_server!==null ?
 		              	<div style={{display:'inline-block'}}>		              	
-		              	<a id='aStyle' href={updatedSite[0].link_git} style={{display:'inline-block',marginRight:'10px'}} data-aos="fade-left" data-aos-delay="350" data-aos-offset="100" data-aos-duration="800"><img style={{marginBottom:'-25px'}} src={`${github}`} alt="githubIcon"/> <p  style={{color:'blue'}} data-aos="fade-left" data-aos-delay="350" data-aos-offset="100" data-aos-duration="800">Front-end code</p></a>
-		              	<a id='aStyle' style={{display:'inline-block'}} data-aos="fade-left" href={updatedSite[0].link_server} data-aos-delay="350" data-aos-offset="100" data-aos-duration="800"><img style={{marginBottom:'-25px'}} src={`${github}`} alt="githubIcon"/> <p  style={{color:'blue'}} data-aos="fade-left" data-aos-delay="350" data-aos-offset="100" data-aos-duration="800">Back-end code</p></a>
+		              	<a id='aStyle' className='animated' href={updatedSite[0].link_git} style={{display:'inline-block',marginRight:'10px'}} data-aos="fade-left" data-aos-delay="350" data-aos-offset="100" data-aos-duration="800"><img style={{marginBottom:'-25px'}} src={`${github}`} alt="githubIcon"/> <p  style={{color:'blue'}} className='animated' data-aos="fade-left" data-aos-delay="350" data-aos-offset="100" data-aos-duration="800">Front-end code</p></a>
+		              	<a id='aStyle' className='animated' style={{display:'inline-block'}} data-aos="fade-left" href={updatedSite[0].link_server} data-aos-delay="350" data-aos-offset="100" data-aos-duration="800"><img style={{marginBottom:'-25px'}} src={`${github}`} alt="githubIcon"/> <p  style={{color:'blue'}} className='animated' data-aos="fade-left" data-aos-delay="350" data-aos-offset="100" data-aos-duration="800">Back-end code</p></a>
 		                </div>
 		              :
-		              	<a id='aStyle' href={updatedSite[0].link_git} style={{display:'inline-block',marginRight:'10px'}} data-aos="fade-left" data-aos-delay="350" data-aos-offset="100" data-aos-duration="800"><img style={{marginBottom:'-25px'}} src={`${github}`} alt="githubIcon"/> <p  style={{color:'blue'}} data-aos="fade-left" data-aos-delay="350" data-aos-offset="100" data-aos-duration="800">Front-end code</p></a>
+		              	<a id='aStyle' className='animated' href={updatedSite[0].link_git} style={{display:'inline-block',marginRight:'10px'}} data-aos="fade-left" data-aos-delay="350" data-aos-offset="100" data-aos-duration="800"><img style={{marginBottom:'-25px'}} src={`${github}`} alt="githubIcon"/> <p  style={{color:'blue'}} className='animated' data-aos="fade-left" data-aos-delay="350" data-aos-offset="100" data-aos-duration="800">Front-end code</p></a>
 		              }                    
 		              </div>        
 		            </Typography>
-		            <hr data-aos="fade-right" data-aos-delay="350" data-aos-offset="100" data-aos-duration="800" style={{marginTop:'22px'}}/>
+		            <hr data-aos="fade-right" className='animated' data-aos-delay="350" data-aos-offset="100" data-aos-duration="800" style={{marginTop:'22px'}}/>
 		            <div className='divCommentStyle'>					
-								<h3 data-aos="fade-right" data-aos-delay="350" data-aos-offset="100" data-aos-duration="800"  className='h3Style'>Commentaires</h3>
-								<button className='commentBtn'  style={{float:'right',display:'inline-block',marginTop:'22px'}} 
-								onClick={displayDIV}
+								<h3 data-aos="fade-right" data-aos-delay="350" data-aos-offset="100" data-aos-duration="800"  className='h3Style animated'>Commentaires</h3>
+								<button className='commentBtn animated '  style={{float:'right',display:'inline-block',marginTop:'22px'}} 
+								onClick={displayDIV}								
 								data-aos="fade-left" data-aos-delay="350" data-aos-offset="100" data-aos-duration="800"
 								>Ajouter un commentaire</button>						
 								<div id='myDIV' style={{height:'200px',display:'none'}} >
