@@ -9,7 +9,7 @@ import github from './Github.png';
 import FloatingActionButtonZoom from '../FloatingActionButtonZoom/FloatingActionButtonZoom.js';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import KeyboardArrowDownRounded from '@material-ui/icons/KeyboardArrowDownRounded'; 
+import KeyboardArrowDownRounded from '@material-ui/icons/KeyboardArrowDownRounded';
 AOS.init();
 
 const styles = theme => ({
@@ -54,9 +54,9 @@ class PaperSheet extends React.Component{
                    <p className='pStyle fade-in five'><a href='https://patatap-1.herokuapp.com/' >Bonus</a></p>    
               </div>
               <div className='fade-in_scroll  breathe'> 
-                <p>Scroll Down</p>
-                <KeyboardArrowDownRounded className='chevStyle' ></KeyboardArrowDownRounded>        
-               </div>               
+                <p>Scroll Down</p>                       
+               </div>  
+               <KeyboardArrowDownRounded className='fade-in_scroll  breathe' style={{color:'grey'}} ></KeyboardArrowDownRounded>              
             </Typography>
             <div style={{marginBottom:'100px'}} data-aos="fade-in"  data-aos-offset="350"  data-aos-duration='1000' >        
             <FloatingActionButtonZoom onMoreInfoUpdate={this.props.onMoreInfoUpdate} lang={this.props.lang}/>
@@ -84,10 +84,10 @@ class PaperSheet extends React.Component{
                   </div>
                   <p className='pStyle fade-in five'><a href='https://patatap-1.herokuapp.com/' >Bonus</a></p>
               </div>
-              <div className='fade-in_scroll  breathe'> 
-                <p>Scroll Down</p>
-                <KeyboardArrowDownRounded className='chevStyle' ></KeyboardArrowDownRounded>        
-               </div>                   
+             <div className='fade-in_scroll  breathe'> 
+                <p>Descendez</p>                       
+               </div>  
+               <KeyboardArrowDownRounded className='fade-in_scroll  breathe' style={{color:'grey'}} ></KeyboardArrowDownRounded>                
             </Typography>
             <div style={{marginBottom:'100px'}} data-aos="fade-in"  data-aos-offset="350"  data-aos-duration='1000' >        
             <FloatingActionButtonZoom onMoreInfoUpdate={this.props.onMoreInfoUpdate} lang={this.props.lang}/>     

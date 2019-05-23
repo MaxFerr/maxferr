@@ -90,10 +90,10 @@ class PaperSheetCv extends React.Component{
               </Grid>
             </Grid> 
           </Typography>
-          <div className='fade-in_scroll  breathe'> 
-                <p>Scroll Down</p>
-                <KeyboardArrowDownRounded className='chevStyle' ></KeyboardArrowDownRounded>        
-               </div>           
+          <div className='fade-in_scroll  breathe' style={{marginTop:'-100px'}}> 
+                <p>Scroll Down</p>                       
+               </div>  
+               <KeyboardArrowDownRounded className='fade-in_scroll  breathe' style={{color:'grey'}} ></KeyboardArrowDownRounded>       
         <div>
         <Typography  variant="h5" component="h3" style={{marginTop:'100px',marginLeft:'3%',marginRight:'3%'}}>
           <Grid container spacing={24}>        
@@ -250,10 +250,10 @@ class PaperSheetCv extends React.Component{
               </Grid>
             </Grid> 
           </Typography>
-          <div className='fade-in_scroll  breathe'> 
-                <p>Scroll Down</p>
-                <KeyboardArrowDownRounded className='chevStyle' ></KeyboardArrowDownRounded>        
-               </div>           
+          <div className='fade-in_scroll  breathe' style={{marginTop:'-100px'}} > 
+                <p>Descendez</p>                       
+               </div>  
+               <KeyboardArrowDownRounded className='fade-in_scroll  breathe' style={{color:'grey'}} ></KeyboardArrowDownRounded>      
         <div>
         <Typography  variant="h5" component="h3" style={{marginTop:'100px',marginLeft:'3%',marginRight:'3%'}}>
           <Grid container spacing={24}>        
