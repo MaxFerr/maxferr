@@ -8,7 +8,8 @@ import './PaperSheet.css';
 import github from './Github.png';
 import FloatingActionButtonZoom from '../FloatingActionButtonZoom/FloatingActionButtonZoom.js';
 import AOS from 'aos';
-import 'aos/dist/aos.css'; 
+import 'aos/dist/aos.css';
+import KeyboardArrowDownRounded from '@material-ui/icons/KeyboardArrowDownRounded'; 
 AOS.init();
 
 const styles = theme => ({
@@ -51,9 +52,13 @@ class PaperSheet extends React.Component{
                     </p>
                   </div>
                    <p className='pStyle fade-in five'><a href='https://patatap-1.herokuapp.com/' >Bonus</a></p>    
-              </div>        
+              </div>
+              <div className='fade-in_scroll  breathe'> 
+                <p>Scroll Down</p>
+                <KeyboardArrowDownRounded className='chevStyle' ></KeyboardArrowDownRounded>        
+               </div>               
             </Typography>
-            <div style={{marginBottom:'100px'}} data-aos="fade-in"  data-aos-offset="120"  data-aos-duration='1000' >        
+            <div style={{marginBottom:'100px'}} data-aos="fade-in"  data-aos-offset="350"  data-aos-duration='1000' >        
             <FloatingActionButtonZoom onMoreInfoUpdate={this.props.onMoreInfoUpdate} lang={this.props.lang}/>
             </div>        
           </Paper>
@@ -78,9 +83,13 @@ class PaperSheet extends React.Component{
                     </p>
                   </div>
                   <p className='pStyle fade-in five'><a href='https://patatap-1.herokuapp.com/' >Bonus</a></p>
-              </div>        
+              </div>
+              <div className='fade-in_scroll  breathe'> 
+                <p>Scroll Down</p>
+                <KeyboardArrowDownRounded className='chevStyle' ></KeyboardArrowDownRounded>        
+               </div>                   
             </Typography>
-            <div style={{marginBottom:'100px'}} data-aos="fade-in"  data-aos-offset="120"  data-aos-duration='1000' >        
+            <div style={{marginBottom:'100px'}} data-aos="fade-in"  data-aos-offset="350"  data-aos-duration='1000' >        
             <FloatingActionButtonZoom onMoreInfoUpdate={this.props.onMoreInfoUpdate} lang={this.props.lang}/>     
             </div>
           </Paper>
