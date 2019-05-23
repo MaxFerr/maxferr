@@ -92,7 +92,7 @@ class PaperSheetCv extends React.Component{
         <Typography  variant="h5" component="h3" style={{marginTop:'100px',marginLeft:'3%',marginRight:'3%'}}>
           <Grid container spacing={24}>        
             <Grid item zeroMinWidth xs={12} md={6}>
-            <div data-aos="fade-right"  data-aos-offset="350" data-aos-duration="800" style={{marginTop:'-75px'}} className='animated' >
+            <div data-aos="fade-right"  data-aos-offset="120" data-aos-duration="800" style={{marginTop:'-75px'}} className='animated' >
             <img alt='img' src={`${Love}`} id='imgLove'></img>
             <p>Building state-of-the-art, easy to use, user-friendly websites and applications is truly a passion of mine and I am confident I would be an excellent addition to your organization. In addition to my knowledge base, I actively seek out new technologies and stay up-to-date on industry trends and advancements.</p>
             <p>I possess excellent communication skills and can liaise effectively with both clients and work colleagues. Other strong points include and ability to work as part of a team or individually.</p>
@@ -248,7 +248,7 @@ class PaperSheetCv extends React.Component{
         <Typography  variant="h5" component="h3" style={{marginTop:'100px',marginLeft:'3%',marginRight:'3%'}}>
           <Grid container spacing={24}>        
             <Grid item zeroMinWidth xs={12} md={6}>
-            <div data-aos="fade-right"  className='animated' data-aos-offset="350" data-aos-duration="800" style={{marginTop:'-75px'}} >
+            <div data-aos="fade-right"  className='animated' data-aos-offset="120" data-aos-duration="800" style={{marginTop:'-75px'}} >
             <img alt='img' src={`${Love}`} id='imgLove'></img>
             <p>Construire des sites Web et des applications à la pointe de la technologie, faciles à utiliser et conviviaux est une de mes passions et je suis convaincu que je serais un excellent ajout à votre organisation. En plus de ma base de connaissances, je recherche activement de nouvelles technologies et reste au courant des tendances et des progrès de l’industrie.</p>
             <p>Je possède d’excellentes aptitudes à la communication et je peux assurer une liaison efficace avec les clients et les collègues de travail. Parmi les autres points forts, citons la capacité à travailler en équipe ou individuellement.</p>

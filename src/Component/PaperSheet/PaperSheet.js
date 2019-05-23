@@ -53,7 +53,7 @@ class PaperSheet extends React.Component{
                    <p className='pStyle fade-in five'><a href='https://patatap-1.herokuapp.com/' >Bonus</a></p>    
               </div>        
             </Typography>
-            <div style={{marginBottom:'100px'}} data-aos="fade-in"  data-aos-offset="350"  data-aos-duration='1000' >        
+            <div style={{marginBottom:'100px'}} data-aos="fade-in"  data-aos-offset="120"  data-aos-duration='1000' >        
             <FloatingActionButtonZoom onMoreInfoUpdate={this.props.onMoreInfoUpdate} lang={this.props.lang}/>
             </div>        
           </Paper>
@@ -80,7 +80,7 @@ class PaperSheet extends React.Component{
                   <p className='pStyle fade-in five'><a href='https://patatap-1.herokuapp.com/' >Bonus</a></p>
               </div>        
             </Typography>
-            <div style={{marginBottom:'100px'}} data-aos="fade-in"  data-aos-offset="350"  data-aos-duration='1000' >        
+            <div style={{marginBottom:'100px'}} data-aos="fade-in"  data-aos-offset="120"  data-aos-duration='1000' >        
             <FloatingActionButtonZoom onMoreInfoUpdate={this.props.onMoreInfoUpdate} lang={this.props.lang}/>     
             </div>
           </Paper>

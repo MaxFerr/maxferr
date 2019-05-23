@@ -102,7 +102,7 @@ class FloatingActionButtonZoom extends React.Component {
             textColor="primary"
             variant="fullWidth"            
           >
-           <Tab icon={<PaletteIcon />} label=" Mon travaille"/>
+           <Tab icon={<PaletteIcon />} label=" Mon travail"/>
           <Tab  icon={<FavoriteIcon />} label="Mes préférés" />            
           </Tabs>
         </AppBar>
