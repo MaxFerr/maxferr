@@ -10,7 +10,7 @@ import FloatingActionButtonZoom from '../FloatingActionButtonZoom/FloatingAction
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import KeyboardArrowDownRounded from '@material-ui/icons/KeyboardArrowDownRounded';
-AOS.init();
+AOS.init({disable: 'mobile'});
 
 const styles = theme => ({
   root: {
@@ -26,15 +26,21 @@ const styles = theme => ({
 class PaperSheet extends React.Component{
   constructor(props){
     super(props);
-    this.state={}
+    this.state={
+      scrollingApp:''
+    }
   }
+
+
   componentDidMount(){
         this.props.ScrollDownCheck(true);
+        this.props.handleScrollAp()        
     }
+  
 
   render(){
-    const { classes } = this.props;
-    if(this.props.lang==='EN'){
+    const { classes,lang,onMoreInfoUpdate,scrollingApp } = this.props;
+    if(lang==='EN'){
       return (
             <div>           
           <Paper className={classes.root} id='paperStyle' elevation={1}>        
@@ -53,13 +59,13 @@ class PaperSheet extends React.Component{
                   </div>
                    <p className='pStyle fade-in five'><a href='https://patatap-1.herokuapp.com/' >Bonus</a></p>    
               </div>
-              <div className='fade-in_scroll  breathe'> 
+              <div style={{display: scrollingApp ? 'block' : 'none'}} className='fade-in_scroll  breathe'> 
                 <p>Scroll Down</p>                       
                </div>  
-               <KeyboardArrowDownRounded className='fade-in_scroll  breathe' style={{color:'grey'}} ></KeyboardArrowDownRounded>              
+               <KeyboardArrowDownRounded style={{display: scrollingApp ? 'block' : 'none', color:'grey'}} className='fade-in_scroll  breathe' ></KeyboardArrowDownRounded>              
             </Typography>
             <div style={{marginBottom:'100px'}} data-aos="fade-in"  data-aos-offset="350"  data-aos-duration='1000' >        
-            <FloatingActionButtonZoom onMoreInfoUpdate={this.props.onMoreInfoUpdate} lang={this.props.lang}/>
+            <FloatingActionButtonZoom onMoreInfoUpdate={onMoreInfoUpdate} lang={lang}/>
             </div>        
           </Paper>
         </div>
@@ -84,13 +90,13 @@ class PaperSheet extends React.Component{
                   </div>
                   <p className='pStyle fade-in five'><a href='https://patatap-1.herokuapp.com/' >Bonus</a></p>
               </div>
-             <div className='fade-in_scroll  breathe'> 
+             <div style={{display: scrollingApp ? 'block' : 'none'}} className='fade-in_scroll  breathe'> 
                 <p>Descendez</p>                       
                </div>  
-               <KeyboardArrowDownRounded className='fade-in_scroll  breathe' style={{color:'grey'}} ></KeyboardArrowDownRounded>                
+               <KeyboardArrowDownRounded className='fade-in_scroll  breathe' style={{display: scrollingApp ? 'block' : 'none', color:'grey'}} ></KeyboardArrowDownRounded>                
             </Typography>
             <div style={{marginBottom:'100px'}} data-aos="fade-in"  data-aos-offset="350"  data-aos-duration='1000' >        
-            <FloatingActionButtonZoom onMoreInfoUpdate={this.props.onMoreInfoUpdate} lang={this.props.lang}/>     
+            <FloatingActionButtonZoom onMoreInfoUpdate={onMoreInfoUpdate} lang={lang}/>     
             </div>
           </Paper>
         </div>

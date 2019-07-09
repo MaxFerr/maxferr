@@ -44,7 +44,8 @@ class Parallax extends React.Component {
       children,
       style,
       image,
-      small
+      small,
+      ScrollDown
     } = this.props;
     const parallaxClasses = classNames({
       [classes.parallax]: true,
@@ -52,7 +53,7 @@ class Parallax extends React.Component {
       [classes.small]: small,
       [className]: className !== undefined
     }); 
-    if(this.props.ScrollDown){
+    if(ScrollDown){
       return (
       <div
         className={parallaxClasses}
@@ -64,12 +65,12 @@ class Parallax extends React.Component {
         }}
         ref="parallax"
       >
-      <div className='fade-in_scroll  breathe'>
-      <div> 
-      <p className='fade-in_scroll  breathe'>Scroll Down</p>
-      <KeyboardArrowDownRounded className='chevStyle' ></KeyboardArrowDownRounded>        
-       </div>       
-       </div>
+      {/*<div className='fade-in_scroll  breathe'>
+            <div> 
+            <p className='fade-in_scroll  breathe'>Scroll Down</p>
+            <KeyboardArrowDownRounded className='chevStyle' ></KeyboardArrowDownRounded>        
+             </div>       
+             </div>*/}
         {children}
       </div>
     );

@@ -9,8 +9,9 @@ import 'aos/dist/aos.css';
 import NewComment from '../NewComment/NewComment.js';
 import github from '../PaperSheet/Github.png';
 import '../AdvancedGridList/AdvancedGridList.css';
+import KeyboardArrowDownRounded from '@material-ui/icons/KeyboardArrowDownRounded';
  
-AOS.init();
+AOS.init({disable: 'mobile'});
 
 const styles = theme => ({
   root: {
@@ -40,6 +41,8 @@ class MoreInfo extends React.Component{
   //getting data with sites id in the url
   componentDidMount(){  		
         this.props.ScrollDownCheck(true);
+        this.props.handleScrollAp();
+        this.props.getID(this.props.match.params.id)
         fetch(`https://maxferr-api.herokuapp.com/moreinfo/${this.props.match.params.id}`).then(response=>{
           return response.json()
         })
@@ -123,7 +126,7 @@ class MoreInfo extends React.Component{
 // Faire la meme chose avec this.props.match.params.id et le loading pour yelpcamp, {...props}in the route to use props.params
   render(){  	
     const { classes,lang } = this.props;
-    const {updatedComment,updatedSite}=this.state;    
+    const {updatedComment,updatedSite,param}=this.state;    
     //hide and show the comment textarea    
     function displayDIV() {
 			const x = document.getElementById("myDIV");
@@ -158,19 +161,23 @@ class MoreInfo extends React.Component{
 		              <h3 data-aos="fade-right" data-aos-delay="350" data-aos-offset="100" data-aos-duration="800">{updatedSite[0].title} </h3>
 		              <img data-aos="fade-left" data-aos-delay="350" data-aos-offset="100" data-aos-duration="800" alt='website' src={updatedSite[0].img} className='imgMoreIStyle' />
 		              <p data-aos="fade-right" data-aos-delay="350" data-aos-offset="100" data-aos-duration="800">{updatedSite[0].descritpion} </p>
+		              <div className='fade-in_scroll  breathe' style={{display: this.props.scrollingApp ? 'block' : 'none'}}> 
+                <p>Scroll Down</p>                       
+               </div>  
+               <KeyboardArrowDownRounded className='fade-in_scroll  breathe' style={{display: this.props.scrollingApp ? 'block' : 'none',color:'grey'}} ></KeyboardArrowDownRounded>
 		              <a id='aStyle' className='animated' style={{display:'block',marginBottom:'10px',marginTop:'40px'}} href={updatedSite[0].link} data-aos="fade-left" data-aos-delay="350" data-aos-offset="100" data-aos-duration="800"><p style={{color:'blue'}}>Try the demo here !</p></a>
 		              
 		              {updatedSite[0].link_server!==null ?
 		              	<div style={{display:'inline-block'}}>		              	
-		              	<a id='aStyle' className='animated' href={updatedSite[0].link_git} style={{display:'inline-block',marginRight:'10px'}} data-aos="fade-left" data-aos-delay="350" data-aos-offset="100" data-aos-duration="800"><img style={{marginBottom:'-25px'}} src={`${github}`} alt="githubIcon"/> <p  style={{color:'blue'}} className='animated' data-aos="fade-left" data-aos-delay="350" data-aos-offset="100" data-aos-duration="800">Front-end code</p></a>
-		              	<a id='aStyle' className='animated' style={{display:'inline-block'}} data-aos="fade-left" href={updatedSite[0].link_server} data-aos-delay="350" data-aos-offset="100" data-aos-duration="800"><img style={{marginBottom:'-25px'}} src={`${github}`} alt="githubIcon"/> <p  style={{color:'blue'}} className='animated' data-aos="fade-left" data-aos-delay="350" data-aos-offset="100" data-aos-duration="800">Back-end code</p></a>
+		              	<a id='aStyle' className='animated' href={updatedSite[0].link_git} style={{display:'inline-block',marginRight:'10px'}} data-aos="fade-left" data-aos-delay="350" data-aos-offset="100" data-aos-duration="800"><img style={{marginBottom:'-25px'}} src={`${github}`} alt="githubIcon"/> <p  style={{color:'blue'}} className='animated' data-aos="fade-left" data-aos-delay="350" data-aos-offset="50" data-aos-duration="800">Front-end code</p></a>
+		              	<a id='aStyle' className='animated' style={{display:'inline-block'}} data-aos="fade-left" href={updatedSite[0].link_server} data-aos-delay="350" data-aos-offset="100" data-aos-duration="800"><img style={{marginBottom:'-25px'}} src={`${github}`} alt="githubIcon"/> <p  style={{color:'blue'}} className='animated' data-aos="fade-left" data-aos-delay="350" data-aos-offset="50" data-aos-duration="800">Back-end code</p></a>
 		                </div>
 		              :
-		              	<a id='aStyle' className='animated' href={updatedSite[0].link_git} style={{display:'inline-block',marginRight:'10px'}} data-aos="fade-left" data-aos-delay="350" data-aos-offset="100" data-aos-duration="800"><img style={{marginBottom:'-25px'}} src={`${github}`} alt="githubIcon"/> <p  style={{color:'blue'}} className='animated' data-aos="fade-left" data-aos-delay="350" data-aos-offset="100" data-aos-duration="800">Front-end code</p></a>
+		              	<a id='aStyle' className='animated' href={updatedSite[0].link_git} style={{display:'inline-block',marginRight:'10px'}} data-aos="fade-left" data-aos-delay="350" data-aos-offset="100" data-aos-duration="800"><img style={{marginBottom:'-25px'}} src={`${github}`} alt="githubIcon"/> <p  style={{color:'blue'}} className='animated' data-aos="fade-left" data-aos-delay="350" data-aos-offset="50" data-aos-duration="800">Front-end code</p></a>
 		              }
 		                               
-		              </div>        
-		            </Typography>
+		              </div>		                      
+		            </Typography>		             
 		            <hr data-aos="fade-right" className='animated' data-aos-delay="350" data-aos-offset="100" data-aos-duration="800" style={{marginTop:'22px'}}/>
 		            <div className='divCommentStyle'>					
 								<h3 data-aos="fade-right" data-aos-delay="350" data-aos-offset="100" data-aos-duration="800" className='h3Style animated'>Comments</h3>
@@ -208,7 +215,7 @@ class MoreInfo extends React.Component{
 		               
 		          </Paper>
 		          <div id='secondDiv'></div>
-		          <NewComment param={this.state.param} updatedComment={updatedComment}/>
+		          <NewComment param={param} updatedComment={updatedComment}/>
 		        </div>
 		      )
 			}
@@ -224,18 +231,22 @@ class MoreInfo extends React.Component{
 		              <h3 data-aos="fade-right" data-aos-delay="350" data-aos-offset="100" data-aos-duration="800">{updatedSite[0].title} </h3>
 		              <img data-aos="fade-left" data-aos-delay="350" data-aos-offset="100" data-aos-duration="800" alt='website' src={updatedSite[0].img} className='imgMoreIStyle' />
 		              <p data-aos="fade-right" data-aos-delay="350" data-aos-offset="100" data-aos-duration="800">{updatedSite[0].description_fr} </p>
+		               <div className='fade-in_scroll  breathe' style={{display: this.props.scrollingApp ? 'block' : 'none'}}> 
+                <p>Descendez</p>                       
+               </div>  
+               <KeyboardArrowDownRounded className='fade-in_scroll  breathe' style={{display: this.props.scrollingApp ? 'block' : 'none',color:'grey'}} ></KeyboardArrowDownRounded>
 		              <a id='aStyle' className='animated' style={{display:'block',marginBottom:'10px',marginTop:'40px'}} href={updatedSite[0].link} data-aos="fade-left" data-aos-delay="350" data-aos-offset="100" data-aos-duration="800"><p style={{color:'blue'}}>Essayer la démo ici !</p></a>
 		              
 		              {updatedSite[0].link_server!==null ?
 		              	<div style={{display:'inline-block'}}>		              	
-		              	<a id='aStyle' className='animated' href={updatedSite[0].link_git} style={{display:'inline-block',marginRight:'10px'}} data-aos="fade-left" data-aos-delay="350" data-aos-offset="100" data-aos-duration="800"><img style={{marginBottom:'-25px'}} src={`${github}`} alt="githubIcon"/> <p  style={{color:'blue'}} className='animated' data-aos="fade-left" data-aos-delay="350" data-aos-offset="100" data-aos-duration="800">Front-end code</p></a>
-		              	<a id='aStyle' className='animated' style={{display:'inline-block'}} data-aos="fade-left" href={updatedSite[0].link_server} data-aos-delay="350" data-aos-offset="100" data-aos-duration="800"><img style={{marginBottom:'-25px'}} src={`${github}`} alt="githubIcon"/> <p  style={{color:'blue'}} className='animated' data-aos="fade-left" data-aos-delay="350" data-aos-offset="100" data-aos-duration="800">Back-end code</p></a>
+		              	<a id='aStyle' className='animated' href={updatedSite[0].link_git} style={{display:'inline-block',marginRight:'10px'}} data-aos="fade-left" data-aos-delay="350" data-aos-offset="50" data-aos-duration="800"><img style={{marginBottom:'-25px'}} src={`${github}`} alt="githubIcon"/> <p  style={{color:'blue'}} className='animated' data-aos="fade-left" data-aos-delay="350" data-aos-offset="100" data-aos-duration="800">Front-end code</p></a>
+		              	<a id='aStyle' className='animated' style={{display:'inline-block'}} data-aos="fade-left" href={updatedSite[0].link_server} data-aos-delay="350" data-aos-offset="50" data-aos-duration="800"><img style={{marginBottom:'-25px'}} src={`${github}`} alt="githubIcon"/> <p  style={{color:'blue'}} className='animated' data-aos="fade-left" data-aos-delay="350" data-aos-offset="100" data-aos-duration="800">Back-end code</p></a>
 		                </div>
 		              :
-		              	<a id='aStyle' className='animated' href={updatedSite[0].link_git} style={{display:'inline-block',marginRight:'10px'}} data-aos="fade-left" data-aos-delay="350" data-aos-offset="100" data-aos-duration="800"><img style={{marginBottom:'-25px'}} src={`${github}`} alt="githubIcon"/> <p  style={{color:'blue'}} className='animated' data-aos="fade-left" data-aos-delay="350" data-aos-offset="100" data-aos-duration="800">Front-end code</p></a>
+		              	<a id='aStyle' className='animated' href={updatedSite[0].link_git} style={{display:'inline-block',marginRight:'10px'}} data-aos="fade-left" data-aos-delay="350" data-aos-offset="50" data-aos-duration="800"><img style={{marginBottom:'-25px'}} src={`${github}`} alt="githubIcon"/> <p  style={{color:'blue'}} className='animated' data-aos="fade-left" data-aos-delay="350" data-aos-offset="100" data-aos-duration="800">Front-end code</p></a>
 		              }                    
 		              </div>        
-		            </Typography>
+		            </Typography>		             
 		            <hr data-aos="fade-right" className='animated' data-aos-delay="350" data-aos-offset="100" data-aos-duration="800" style={{marginTop:'22px'}}/>
 		            <div className='divCommentStyle'>					
 								<h3 data-aos="fade-right" data-aos-delay="350" data-aos-offset="100" data-aos-duration="800"  className='h3Style animated'>Commentaires</h3>
@@ -272,7 +283,7 @@ class MoreInfo extends React.Component{
 							</div>
 		          </Paper>
 		          <div id='secondDiv'></div>
-		          <NewComment param={this.state.param} updatedComment={updatedComment}/>
+		          <NewComment param={param} updatedComment={updatedComment}/>
 		        </div>
 		      )
 			}

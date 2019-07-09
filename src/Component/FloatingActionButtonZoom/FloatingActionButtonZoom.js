@@ -59,14 +59,15 @@ class FloatingActionButtonZoom extends React.Component {
   };
 
   render() {
-    const { classes, theme,lang } = this.props;
+    const { classes, theme,lang,onMoreInfoUpdate } = this.props;
+    const {value}=this.state;
 
     if(lang==='EN'){
       return (
       <div className={classes.root} >
         <AppBar position="static" color="default" style={{maxWidth:'500px',display: 'block',marginLeft: 'auto',  marginRight: 'auto'}}>
           <Tabs
-            value={this.state.value}
+            value={value}
             onChange={this.handleChange}
             indicatorColor="primary"
             textColor="primary"
@@ -79,14 +80,14 @@ class FloatingActionButtonZoom extends React.Component {
         <SwipeableViews
           style={{maxWidth:'700px',display: 'block',marginLeft: 'auto',  marginRight: 'auto'}}
           axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
-          index={this.state.value}
+          index={value}
           onChangeIndex={this.handleChangeIndex}
         >
           <TabContainer dir={theme.direction}>
-         <AdvancedGridList onMoreInfoUpdate={this.props.onMoreInfoUpdate}/>
+         <AdvancedGridList onMoreInfoUpdate={onMoreInfoUpdate}/>
          </TabContainer>
           <TabContainer dir={theme.direction}>
-          <AdvancedGridListFav onMoreInfoUpdate={this.props.onMoreInfoUpdate}/>
+          <AdvancedGridListFav onMoreInfoUpdate={onMoreInfoUpdate}/>
           </TabContainer>          
         </SwipeableViews>        
       </div>
@@ -96,7 +97,7 @@ class FloatingActionButtonZoom extends React.Component {
       <div className={classes.root} >
         <AppBar position="static" color="default" style={{maxWidth:'500px',display: 'block',marginLeft: 'auto',  marginRight: 'auto'}}>
           <Tabs
-            value={this.state.value}
+            value={value}
             onChange={this.handleChange}
             indicatorColor="primary"
             textColor="primary"
@@ -109,14 +110,14 @@ class FloatingActionButtonZoom extends React.Component {
         <SwipeableViews
           style={{maxWidth:'700px',display: 'block',marginLeft: 'auto',  marginRight: 'auto'}}
           axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
-          index={this.state.value}
+          index={value}
           onChangeIndex={this.handleChangeIndex}
         >
           <TabContainer dir={theme.direction}>
-         <AdvancedGridList onMoreInfoUpdate={this.props.onMoreInfoUpdate}/>
+         <AdvancedGridList onMoreInfoUpdate={onMoreInfoUpdate}/>
          </TabContainer>
           <TabContainer dir={theme.direction}>
-          <AdvancedGridListFav onMoreInfoUpdate={this.props.onMoreInfoUpdate}/>
+          <AdvancedGridListFav onMoreInfoUpdate={onMoreInfoUpdate}/>
           </TabContainer>          
         </SwipeableViews>        
       </div>

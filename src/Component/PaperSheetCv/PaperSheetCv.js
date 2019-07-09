@@ -15,7 +15,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import KeyboardArrowDownRounded from '@material-ui/icons/KeyboardArrowDownRounded';
 
-AOS.init();
+AOS.init({disable: 'mobile'});
 
 
 const styles = theme => ({
@@ -43,9 +43,10 @@ class PaperSheetCv extends React.Component{
   }
   componentDidMount(){
         this.props.ScrollDownCheck(true);
+        this.props.handleScrollAp();
     }
   render(){
-    const { classes,lang } = this.props;
+    const { classes,lang,scrollingApp } = this.props;
     if(lang==='EN'){
       return(
       <Paper className={classes.root} id='paperStyle' elevation={1}>
@@ -90,10 +91,10 @@ class PaperSheetCv extends React.Component{
               </Grid>
             </Grid> 
           </Typography>
-          <div className='fade-in_scroll  breathe' style={{marginTop:'-100px'}}> 
+          <div className='fade-in_scroll  breathe' style={{display: scrollingApp ? 'block' : 'none',marginTop:'-100px'}}> 
                 <p>Scroll Down</p>                       
                </div>  
-               <KeyboardArrowDownRounded className='fade-in_scroll  breathe' style={{color:'grey'}} ></KeyboardArrowDownRounded>       
+               <KeyboardArrowDownRounded className='fade-in_scroll  breathe' style={{display: scrollingApp ? 'block' : 'none',color:'grey'}} ></KeyboardArrowDownRounded>       
         <div>
         <Typography  variant="h5" component="h3" style={{marginTop:'100px',marginLeft:'3%',marginRight:'3%'}}>
           <Grid container spacing={24}>        
@@ -154,9 +155,9 @@ class PaperSheetCv extends React.Component{
         <Typography  variant="h5" component="h3" style={{marginTop:'50px',marginLeft:'3%',marginRight:'3%'}}>
           <Grid container spacing={24}>        
             <Grid item zeroMinWidth xs={12} md={6}>            
-            <h5 data-aos="fade-left"  data-aos-offset="250" data-aos-duration="800" className='animated'>EDUCATION</h5>
-            <hr data-aos="fade-right"  data-aos-offset="200" data-aos-duration="800" className='animated'/>
-            <div data-aos="fade-right"  data-aos-offset="200" data-aos-duration="800" className='animated' style={{textAlign:'left'}}>
+            <h5 data-aos="fade-left"  data-aos-offset="250" data-aos-duration="800" >EDUCATION</h5>
+            <hr data-aos="fade-right"  data-aos-offset="200" data-aos-duration="800" />
+            <div data-aos="fade-right"  data-aos-offset="200" data-aos-duration="800"  style={{textAlign:'left'}}>
               <ul className='listStyle listStyle2'>
                 <li><strong>2012-2017 </strong>: AESI Bachelor in Science at the High School of the City of Liège Teaching category.</li>
                 <ul className='listStyle listStyle2'>
@@ -172,9 +173,9 @@ class PaperSheetCv extends React.Component{
               </div>
              </Grid>
              <Grid item zeroMinWidth xs={12} md={6}>
-            <h5 data-aos="fade-left"  data-aos-offset="250" data-aos-duration="800" className='animated'>PROFESSIONAL EXPERIENCE</h5>
-             <hr data-aos="fade-right"  data-aos-offset="200" data-aos-duration="800" className='animated'/>
-             <div data-aos="fade-right"  data-aos-offset="200" data-aos-duration="800" className='animated' style={{textAlign:'left'}}>
+            <h5 data-aos="fade-left"  data-aos-offset="250" data-aos-duration="800" >PROFESSIONAL EXPERIENCE</h5>
+             <hr data-aos="fade-right"  data-aos-offset="200" data-aos-duration="800" />
+             <div data-aos="fade-right"  data-aos-offset="200" data-aos-duration="800"  style={{textAlign:'left'}}>
               <ul className='listStyle listStyle2'>
                 <li><strong>2017-2018 </strong>: Science teacher at "l'Institut Marie-Thérèse E.S.T."</li>
                 <li><strong>January 2014 - April 2017 </strong>: 10 one-month internships in different schools in the "Liège" region.</li>
@@ -183,9 +184,9 @@ class PaperSheetCv extends React.Component{
             </div>
              </Grid>
              <Grid item zeroMinWidth xs={12} md={6}>
-            <h5 data-aos="fade-left"  data-aos-offset="40" data-aos-duration="800" className='animated'>LANGUAGES AND COMPUTERS</h5>
-             <hr data-aos="fade-right"  data-aos-offset="40" data-aos-duration="800" className='animated'/>
-             <div data-aos="fade-right"  data-aos-offset="35" data-aos-duration="800" className='animated' style={{textAlign:'left'}}>
+            <h5 data-aos="fade-left"  data-aos-offset="40" data-aos-duration="800" >LANGUAGES AND COMPUTERS</h5>
+             <hr data-aos="fade-right"  data-aos-offset="40" data-aos-duration="800" />
+             <div data-aos="fade-right"  data-aos-offset="35" data-aos-duration="800"  style={{textAlign:'left'}}>
              <ul className='listStyle listStyle2'>
                 <li><strong>Languages </strong>: French - Mother tongue, English - Bilingual, Dutch - Very good notions.</li>
                 <li><strong>Software/Programming languages </strong>: Html,Reactjs,Nodejs,jQuery,(C, C++), Javascript, CSS, Photoshop, Word, Excel, PowerPoint.</li>
@@ -250,10 +251,10 @@ class PaperSheetCv extends React.Component{
               </Grid>
             </Grid> 
           </Typography>
-          <div className='fade-in_scroll  breathe' style={{marginTop:'-100px'}} > 
+          <div className='fade-in_scroll  breathe' style={{display: scrollingApp ? 'block' : 'none',marginTop:'-100px'}} > 
                 <p>Descendez</p>                       
                </div>  
-               <KeyboardArrowDownRounded className='fade-in_scroll  breathe' style={{color:'grey'}} ></KeyboardArrowDownRounded>      
+               <KeyboardArrowDownRounded className='fade-in_scroll  breathe' style={{display: scrollingApp ? 'block' : 'none',color:'grey'}} ></KeyboardArrowDownRounded>      
         <div>
         <Typography  variant="h5" component="h3" style={{marginTop:'100px',marginLeft:'3%',marginRight:'3%'}}>
           <Grid container spacing={24}>        

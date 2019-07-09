@@ -99,7 +99,7 @@ render(){
   const { classes } = this.props;
   const {big,tileData}=this.state;
   
-  if(this.state.tileData.length<1){
+  if(tileData.length<1){
     return (<div>
       <p>Loading<span className='loadingDot'>.</span><span className='loadingDot'>.</span><span className='loadingDot'>.</span></p>
       </div>)

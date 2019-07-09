@@ -6,7 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import './PaperSheetContact.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; 
-AOS.init();
+AOS.init({disable: 'mobile'});
 
 const styles = theme => ({
   root: {

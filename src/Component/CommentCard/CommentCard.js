@@ -5,7 +5,7 @@ import 'aos/dist/aos.css';
 import Paper from '@material-ui/core/Paper';
 import './CommentCard.css';
 import Moment from 'react-moment';
-AOS.init();
+AOS.init({disable: 'mobile'});
 
 
 const CommentCard=({comment,username,date,id})=>{

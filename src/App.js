@@ -65,9 +65,42 @@ class App extends Component {
     this.state={     
       language:'EN',
       ScrollDown:true,
-      moreinfosite:[]      
+      moreinfosite:[],
+      scrollingApp:'',
+      id:''     
     }    
    }
+    
+
+   getID=(id)=>{
+    this.setState({id:id})
+   }
+//making "scroll down" appear and disapear
+   handleScrollAp=(event)=> {      
+    if(this.props.location.pathname===`/moreinfo/${this.state.id}`){
+       this.setScroll(100)
+    }else{
+      this.setScroll(280)
+    } 
+  }
+
+//making "scroll down" appear and disapear
+  setScroll=(value)=>{
+     if (window.scrollY < value ) {
+      this.setState({scrollingApp: true})
+      }
+      else if (window.scrollY > value ) {
+        this.setState({scrollingApp: false})
+      }      
+  }
+
+  componentDidMount(){        
+    window.addEventListener('scroll', this.handleScrollAp);        
+  }
+
+  componentWillUnmount(){
+    window.removeEventListener('scroll', this.handleScrollAp);
+  }
   
   langSelect = (lang) => {
     this.setState({language:lang})
@@ -109,7 +142,7 @@ class App extends Component {
   }   
   
   render() {
-    const {ScrollDown,language,moreinfosite}=this.state;
+    const {ScrollDown,language,moreinfosite,scrollingApp}=this.state;    
     return (
       <div className="App">
       <Particles className='particles' params={particlesOptions} />      
@@ -125,10 +158,10 @@ class App extends Component {
         <TransitionGroup component={null} >
           <CSSTransition key={location.key} timeout={600} classNames="background">
             <Switch location={location} >
-              <Route exact path="/" render={(props) => <PaperSheet lang={language} ScrollDownCheck={this.ScrollDownCheck} onMoreInfoUpdate={this.onMoreInfoUpdate} /> }/>
-              <Route exact path="/cv"  render={(props) => <PaperSheetCv lang={language} ScrollDownCheck={this.ScrollDownCheck}/> }/>
-              <Route exact path="/contact" render={(props) => <PaperSheetContact lang={language} ScrollDownCheck={this.ScrollDownCheck}/>} />
-              <Route exact path="/moreinfo/:id" render={(props) => <MoreInfo {...props} lang={language} ScrollDownCheck={this.ScrollDownCheck} moreinfosite={moreinfosite} />} />
+              <Route exact path="/" render={(props) => <PaperSheet lang={language} ScrollDownCheck={this.ScrollDownCheck} onMoreInfoUpdate={this.onMoreInfoUpdate} scrollingApp={scrollingApp} handleScrollAp={this.handleScrollAp} /> }/>
+              <Route exact path="/cv"  render={(props) => <PaperSheetCv lang={language} ScrollDownCheck={this.ScrollDownCheck} scrollingApp={scrollingApp} handleScrollAp={this.handleScrollAp}/> }/>
+              <Route exact path="/contact" render={(props) => <PaperSheetContact lang={language} ScrollDownCheck={this.ScrollDownCheck} scrollingApp={scrollingApp} handleScrollAp={this.handleScrollAp}/>} />
+              <Route exact path="/moreinfo/:id" render={(props) => <MoreInfo {...props} lang={language} ScrollDownCheck={this.ScrollDownCheck} moreinfosite={moreinfosite} scrollingApp={scrollingApp} handleScrollAp={this.handleScrollAp} getID={this.getID} />} />
             </Switch>
           </CSSTransition>
         </TransitionGroup>
