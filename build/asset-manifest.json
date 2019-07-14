@@ -1,18 +1,20 @@
 {
-  "main.css": "/static/css/main.3bece8c4.chunk.css",
-  "main.js": "/static/js/main.6f67da4d.chunk.js",
-  "main.js.map": "/static/js/main.6f67da4d.chunk.js.map",
-  "static/css/1.98e55c20.chunk.css": "/static/css/1.98e55c20.chunk.css",
-  "static/js/1.5302df5d.chunk.js": "/static/js/1.5302df5d.chunk.js",
-  "static/js/1.5302df5d.chunk.js.map": "/static/js/1.5302df5d.chunk.js.map",
-  "runtime~main.js": "/static/js/runtime~main.229c360f.js",
-  "runtime~main.js.map": "/static/js/runtime~main.229c360f.js.map",
-  "static/css/main.3bece8c4.chunk.css.map": "/static/css/main.3bece8c4.chunk.css.map",
-  "static/media/halo_reach_wallpaper_1920x1080_by_hellhoundx666.jpg": "/static/media/halo_reach_wallpaper_1920x1080_by_hellhoundx666.858445ae.jpg",
-  "static/media/wpp.jpg": "/static/media/wpp.4b7effa9.jpg",
-  "static/media/love.jpg": "/static/media/love.0d0e9d72.jpg",
-  "static/css/1.98e55c20.chunk.css.map": "/static/css/1.98e55c20.chunk.css.map",
-  "index.html": "/index.html",
-  "precache-manifest.11730052962b5d368feced20e87dec18.js": "/precache-manifest.11730052962b5d368feced20e87dec18.js",
-  "service-worker.js": "/service-worker.js"
+  "files": {
+    "main.css": "/static/css/main.329c9cc3.chunk.css",
+    "main.js": "/static/js/main.ca781815.chunk.js",
+    "main.js.map": "/static/js/main.ca781815.chunk.js.map",
+    "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
+    "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
+    "static/css/2.7abef457.chunk.css": "/static/css/2.7abef457.chunk.css",
+    "static/js/2.afcc91db.chunk.js": "/static/js/2.afcc91db.chunk.js",
+    "static/js/2.afcc91db.chunk.js.map": "/static/js/2.afcc91db.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.f4bef4b70451ed43705525f75d25890a.js": "/precache-manifest.f4bef4b70451ed43705525f75d25890a.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.7abef457.chunk.css.map": "/static/css/2.7abef457.chunk.css.map",
+    "static/css/main.329c9cc3.chunk.css.map": "/static/css/main.329c9cc3.chunk.css.map",
+    "static/media/halo_reach_wallpaper_1920x1080_by_hellhoundx666.jpg": "/static/media/halo_reach_wallpaper_1920x1080_by_hellhoundx666.858445ae.jpg",
+    "static/media/love.jpg": "/static/media/love.0d0e9d72.jpg",
+    "static/media/wpp.jpg": "/static/media/wpp.4b7effa9.jpg"
+  }
 }
