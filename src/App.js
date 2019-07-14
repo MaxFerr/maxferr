@@ -80,7 +80,7 @@ class App extends Component {
     if(this.props.location.pathname===`/moreinfo/${this.state.id}`){
        this.setScroll(100)
     }else{
-      this.setScroll(280)
+      this.setScroll(350)
     } 
   }
 
